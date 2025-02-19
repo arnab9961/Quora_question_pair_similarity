@@ -26,40 +26,36 @@ def compute_features(q1, q2):
     ]
     return np.array(features).reshape(1, -1)
 
-# Background Image with 40% Opacity
-bg_image_url = "https://cdn.prod.website-files.com/59e16042ec229e00016d3a66/614bcf8c2734963b4968b72e_Quota%20pitch%20deck_Blog%20listing.webp"
-
-custom_css = f"""
+# Gradient Background & Styling
+custom_css = """
 <style>
-    body {{
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url("{bg_image_url}") no-repeat center center fixed;
-        background-size: cover;
+    body {
+        background: linear-gradient(to right, #FF9A8B, #FF6A88, #FF99AC);
         color: #ffffff;
         font-family: 'Arial', sans-serif;
-    }}
-    .main {{
+    }
+    .main {
         background-color: rgba(30, 30, 30, 0.85); 
         padding: 30px; 
         border-radius: 10px;
         max-width: 600px;
         margin: auto;
-    }}
-    input, textarea {{
+    }
+    input, textarea {
         background-color: #333; 
         color: #fff; 
         border-radius: 5px;
-    }}
-    button {{
+    }
+    button {
         background-color: #FF4B4B; 
         color: white; 
         font-size: 18px; 
         padding: 10px; 
         border-radius: 5px; 
         border: none;
-    }}
-    button:hover {{ background-color: #FF2222; }}
-    .prediction-box {{
+    }
+    button:hover { background-color: #FF2222; }
+    .prediction-box {
         font-size: 28px; 
         font-weight: bold; 
         padding: 20px; 
@@ -68,12 +64,21 @@ custom_css = f"""
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(10px);
         margin-top: 20px;
-    }}
+    }
+    .title {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .title span {
+        color: red;
+        font-size: 60px;
+    }
 </style>
 """
 st.markdown(custom_css, unsafe_allow_html=True)
 
-st.title("🚀 Question Similarity Checker")
+st.markdown('<div class="title"><span>Q</span>uestion Similarity Checker</div>', unsafe_allow_html=True)
 st.write("🔍 Check if two questions are duplicates.")
 
 q1 = st.text_input("Enter first question:")
