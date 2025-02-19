@@ -66,7 +66,7 @@ gradient_css = """
 st.markdown(gradient_css, unsafe_allow_html=True)
 
 st.markdown('<div class="title"><span>Q</span>uestion Similarity Checker</div>', unsafe_allow_html=True)
-st.write("🔍 Check if two questions are duplicates.")
+st.write("Check if two questions are duplicates.")
 
 q1 = st.text_input("Enter first question:")
 q2 = st.text_input("Enter second question:")
