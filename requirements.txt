@@ -1,7 +1,6 @@
 streamlit
 numpy
-fuzzywuzzy
 scikit-learn
-python-Levenshtein
-pickle5
 thefuzz
+python-Levenshtein
+fuzzywuzzy
