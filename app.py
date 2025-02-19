@@ -85,4 +85,25 @@ q2 = st.text_input("Enter second question:")
 # Button
 if st.button("🔎 Check Similarity"):
     if not q1 or not q2:
-        st.warning("⚠️ Please enter
+        st.warning("⚠️ Please enter both questions.")
+    else:
+        model = load_model()
+        if model is not None:
+            try:
+                features = compute_features(q1, q2)
+                prediction = model.predict(features)[0]
+                result = "✅ Duplicate" if prediction == 1 else "❌ Not Duplicate"
+            except:
+                result = "⚠️ Error in model prediction"
+        else:
+            avg_score = sum([
+                fuzz.QRatio(q1, q2),
+                fuzz.partial_ratio(q1, q2),
+                fuzz.token_sort_ratio(q1, q2),
+                fuzz.token_set_ratio(q1, q2)
+            ]) / 4
+            result = "✅ Duplicate" if avg_score > 70 else "❌ Not Duplicate"
+
+        st.markdown(f'<div class="prediction-box">{result}</div>', unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)  # Close the white-box div
