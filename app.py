@@ -4,10 +4,8 @@ import numpy as np
 from thefuzz import fuzz
 import os
 
-# Set Page Config
 st.set_page_config(page_title="Question Similarity Checker", layout="centered")
 
-# Load Model Function
 def load_model():
     try:
         model_path = "model.pkl"
@@ -19,7 +17,6 @@ def load_model():
     except Exception:
         return None
 
-# Compute Features Function
 def compute_features(q1, q2):
     features = [
         fuzz.QRatio(q1, q2),
@@ -32,54 +29,29 @@ def compute_features(q1, q2):
 # UI Styling
 custom_css = """
 <style>
-    body {
-        background-color: #121212;
-        color: #ffffff;
-        font-family: 'Arial', sans-serif;
-    }
-    .main {
-        background-color: #1E1E1E;
-        padding: 30px;
-        border-radius: 10px;
-    }
-    input, textarea {
-        background-color: #333;
-        color: #fff;
-        border-radius: 5px;
-    }
-    button {
-        background-color: #FF4B4B;
-        color: white;
-        font-size: 18px;
-        padding: 10px;
-        border-radius: 5px;
-        border: none;
-    }
-    button:hover {
-        background-color: #FF2222;
-    }
-    .prediction-box {
-        font-size: 24px;
-        font-weight: bold;
-        padding: 20px;
-        border-radius: 8px;
-        text-align: center;
-    }
+    body { background-color: #121212; color: #ffffff; font-family: 'Arial', sans-serif; }
+    .main { background-color: #1E1E1E; padding: 30px; border-radius: 10px; }
+    input, textarea { background-color: #333; color: #fff; border-radius: 5px; }
+    button { background-color: #FF4B4B; color: white; font-size: 18px; padding: 10px; border-radius: 5px; border: none; }
+    button:hover { background-color: #FF2222; }
+    .prediction-box { font-size: 24px; font-weight: bold; padding: 20px; border-radius: 8px; text-align: center; }
 </style>
 """
-
 st.markdown(custom_css, unsafe_allow_html=True)
 
-# Title and Image
-st.image("transparent_image.png", use_column_width=True)  # Add transparent image here
+# Try to Load Image
+image_path = "transparent_image.png"
+if os.path.exists(image_path):
+    st.image(image_path, use_container_width=True)
+else:
+    st.write("🔹 **Upload a transparent background image for a better UI!**")
+
 st.title("🚀 Question Similarity Checker")
 st.write("🔍 Check if two questions are duplicates.")
 
-# Input Fields
 q1 = st.text_input("Enter first question:")
 q2 = st.text_input("Enter second question:")
 
-# Button
 if st.button("🔎 Check Similarity"):
     if not q1 or not q2:
         st.warning("⚠️ Please enter both questions.")
