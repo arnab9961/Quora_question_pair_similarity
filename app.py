@@ -4,10 +4,9 @@ import numpy as np
 from thefuzz import fuzz
 import os
 
-# Set Page Title and Red "Q" as Favicon
+# Set Page Title with Search Icon in Tab
 st.set_page_config(
-    page_title="Quora Question Pair Similarity",
-    page_icon="🟥",  # Red square emoji as a Q icon
+    page_title="🔍 Question Similarity Checker",  # Added search icon in the title
     layout="centered"
 )
 
@@ -79,9 +78,9 @@ st.markdown(custom_css, unsafe_allow_html=True)
 # White Box Wrapper
 st.markdown('<div class="white-box">', unsafe_allow_html=True)
 
-# Title with Red "Q"
-st.markdown('<div class="title"><span>Q</span>uora Question Pair Similarity</div>', unsafe_allow_html=True)
-st.write("🔍 Check if two Quora questions are duplicates.")
+# Title
+st.markdown('<div class="title"><span>Q</span>uestion Similarity Checker</div>', unsafe_allow_html=True)
+st.write("🔍 Check if two questions are duplicates.")
 
 # Input Fields
 q1 = st.text_input("Enter first question:")
