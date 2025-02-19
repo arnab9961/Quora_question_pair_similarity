@@ -6,7 +6,7 @@ import os
 
 # Set Page Title with Search Icon in Tab
 st.set_page_config(
-    page_title="🔍 Question Similarity Checker",  # Added search icon in the title
+    page_title="🔍 Quora Question Similarity Checker",  # Added search icon in the title
     layout="centered"
 )
 
