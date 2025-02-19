@@ -4,7 +4,12 @@ import numpy as np
 from thefuzz import fuzz
 import os
 
-st.set_page_config(page_title="Question Similarity Checker", layout="centered")
+# Set Page Title and Red "Q" as Favicon
+st.set_page_config(
+    page_title="Quora Question Pair Similarity",
+    page_icon="🟥",  # Red square emoji as a Q icon
+    layout="centered"
+)
 
 def load_model():
     try:
@@ -26,18 +31,26 @@ def compute_features(q1, q2):
     ]
     return np.array(features).reshape(1, -1)
 
-# Apply Gradient Background
-gradient_css = """
+# Apply Gradient Background & White Box Styling
+custom_css = """
 <style>
+    /* Gradient Background */
     [data-testid="stAppViewContainer"] {
         background: linear-gradient(to right, #FF9A8B, #FF6A88, #FF99AC);
     }
-    [data-testid="stHeader"] {
-        background: rgba(0,0,0,0);
+    
+    /* White Box */
+    .white-box {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
     }
-    [data-testid="stToolbar"] {
-        right: 2rem;
-    }
+
+    /* Title Styling */
     .title {
         font-size: 40px;
         font-weight: bold;
@@ -47,6 +60,8 @@ gradient_css = """
         color: red;
         font-size: 60px;
     }
+
+    /* Prediction Box */
     .prediction-box {
         font-size: 28px; 
         font-weight: bold; 
@@ -59,14 +74,20 @@ gradient_css = """
     }
 </style>
 """
-st.markdown(gradient_css, unsafe_allow_html=True)
+st.markdown(custom_css, unsafe_allow_html=True)
 
-st.markdown('<div class="title"><span>Q</span>uestion Similarity Checker</div>', unsafe_allow_html=True)
-st.write("🔍 Check if two questions are duplicates.")
+# White Box Wrapper
+st.markdown('<div class="white-box">', unsafe_allow_html=True)
 
+# Title with Red "Q"
+st.markdown('<div class="title"><span>Q</span>uora Question Pair Similarity</div>', unsafe_allow_html=True)
+st.write("🔍 Check if two Quora questions are duplicates.")
+
+# Input Fields
 q1 = st.text_input("Enter first question:")
 q2 = st.text_input("Enter second question:")
 
+# Button
 if st.button("🔎 Check Similarity"):
     if not q1 or not q2:
         st.warning("⚠️ Please enter both questions.")
@@ -89,3 +110,5 @@ if st.button("🔎 Check Similarity"):
             result = "✅ Duplicate" if avg_score > 70 else "❌ Not Duplicate"
 
         st.markdown(f'<div class="prediction-box">{result}</div>', unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)  # Close the white-box div
