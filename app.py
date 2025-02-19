@@ -96,6 +96,6 @@ if st.button("🔎 Check Similarity"):
 
 
 st.markdown(
-    "**I sampled 8,000 rows from the dataset to reduce the size of the `.pkl` file, as a larger file would make deployment on Streamlit difficult otherwise the results might show better**"
+    "**I sampled 8,000 rows from the dataset to reduce the size of the `.pkl` file, as a larger file would make deployment on Streamlit difficult otherwise the results might show better.**"
 )
 
