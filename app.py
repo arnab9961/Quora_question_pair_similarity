@@ -93,3 +93,9 @@ if st.button("🔎 Check Similarity"):
             result = "✅ Duplicate" if avg_score > 70 else "❌ Not Duplicate"
 
         st.markdown(f'<div class="prediction-box">{result}</div>', unsafe_allow_html=True)
+
+
+st.markdown(
+    "**I sampled 8,000 rows from the dataset to reduce the size of the `.pkl` file, as a larger file would make deployment on Streamlit difficult.**"
+)
+
