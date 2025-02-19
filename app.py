@@ -26,44 +26,17 @@ def compute_features(q1, q2):
     ]
     return np.array(features).reshape(1, -1)
 
-# Gradient Background & Styling
-custom_css = """
+# Apply Gradient Background
+gradient_css = """
 <style>
-    body {
+    [data-testid="stAppViewContainer"] {
         background: linear-gradient(to right, #FF9A8B, #FF6A88, #FF99AC);
-        color: #ffffff;
-        font-family: 'Arial', sans-serif;
     }
-    .main {
-        background-color: rgba(30, 30, 30, 0.85); 
-        padding: 30px; 
-        border-radius: 10px;
-        max-width: 600px;
-        margin: auto;
+    [data-testid="stHeader"] {
+        background: rgba(0,0,0,0);
     }
-    input, textarea {
-        background-color: #333; 
-        color: #fff; 
-        border-radius: 5px;
-    }
-    button {
-        background-color: #FF4B4B; 
-        color: white; 
-        font-size: 18px; 
-        padding: 10px; 
-        border-radius: 5px; 
-        border: none;
-    }
-    button:hover { background-color: #FF2222; }
-    .prediction-box {
-        font-size: 28px; 
-        font-weight: bold; 
-        padding: 20px; 
-        border-radius: 8px; 
-        text-align: center;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(10px);
-        margin-top: 20px;
+    [data-testid="stToolbar"] {
+        right: 2rem;
     }
     .title {
         font-size: 40px;
@@ -74,9 +47,19 @@ custom_css = """
         color: red;
         font-size: 60px;
     }
+    .prediction-box {
+        font-size: 28px; 
+        font-weight: bold; 
+        padding: 20px; 
+        border-radius: 8px; 
+        text-align: center;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        margin-top: 20px;
+    }
 </style>
 """
-st.markdown(custom_css, unsafe_allow_html=True)
+st.markdown(gradient_css, unsafe_allow_html=True)
 
 st.markdown('<div class="title"><span>Q</span>uestion Similarity Checker</div>', unsafe_allow_html=True)
 st.write("🔍 Check if two questions are duplicates.")
