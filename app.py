@@ -6,7 +6,7 @@ import os
 
 # Set Page Title with Search Icon in Tab
 st.set_page_config(
-    page_title="🔍 Quora Question Similarity Checker",  # Added search icon in the title
+    page_title="🔍 Quora Question Pair Similarity",  # Updated title
     layout="centered"
 )
 
@@ -65,7 +65,7 @@ gradient_css = """
 """
 st.markdown(gradient_css, unsafe_allow_html=True)
 
-st.markdown('<div class="title"><span>Q</span>uestion Similarity Checker</div>', unsafe_allow_html=True)
+st.markdown('<div class="title"><span>Q</span>uora Question Pair Similarity</div>', unsafe_allow_html=True)
 st.write("Check if two questions are duplicates.")
 
 q1 = st.text_input("Enter first question:")
