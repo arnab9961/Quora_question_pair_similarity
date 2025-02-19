@@ -1,0 +1,6 @@
+streamlit
+numpy
+fuzzywuzzy
+scikit-learn
+python-Levenshtein
+pickle5
