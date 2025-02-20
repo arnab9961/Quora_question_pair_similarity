@@ -1,7 +1,7 @@
 # 📌 Question Pair Similarity Classification
 
 ## **Introduction**  
-This project aims to build a **machine learning system** that can identify whether two questions have the **same meaning** or not. Using **text processing, data analysis, and machine learning models**, we compare question pairs to detect duplicates.  
+This project aims to build a **machine learning system** that can identify whether two questions have the **same meaning** or not. Using **text processing, data analysis, and machine learning models**, we compare question pairs to detect duplicates.
 
 ---
 
@@ -55,8 +55,17 @@ We also performed **Grid Search** for **hyperparameter tuning**.
 ---
 
 ## **📈 6. Model Evaluation**  
-✅ The best model achieved **XX% accuracy** (*replace with actual number*).  
-✅ A **confusion matrix** was used to analyze the model's performance.  
+
+| **Model**              | **Accuracy** | **F1-Score** |
+|------------------------|-------------|--------------|
+| Logistic Regression   | **85%**      | **83%**      |
+| Random Forest        | **78%**      | **75%**      |
+| XGB                  | **80%**      | **79%**      |
+| ANN                  | **88%**      | **86%**      |
+| Decision Tree        | **76%**      | **73%**      |
+
+✅ **ANN performed the best**, achieving **88% accuracy**.  
+✅ A **confusion matrix** was used to analyze model errors.  
 
 ---
 
@@ -67,5 +76,4 @@ We deployed the model using **Streamlit**, allowing users to:
 
 🔗 **Try the Web App:** [👉 Click Here](https://questionquora.streamlit.app/)  
 
-![Application Screenshot](image.png)  
-
+![Application Screenshot](image.png) 
