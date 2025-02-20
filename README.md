@@ -7,6 +7,7 @@ The goal of this project is to develop an advanced question pair similarity clas
 
 ## **📂 1. Reading the Dataset**  
 The `train.csv` file contains **404,290 rows and 6 columns**. Training the model on the entire dataset would require significant computational time. 
+
 ✅ To optimize performance, we **randomly selected 50,000 rows** for training.  
 
 ---
