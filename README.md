@@ -58,13 +58,13 @@ We also performed **Grid Search** for **hyperparameter tuning**.
 
 | **Model**              | **Accuracy** | **F1-Score** |
 |------------------------|-------------|--------------|
-| Logistic Regression   | **85%**      | **83%**      |
-| Random Forest        | **78%**      | **75%**      |
-| XGB                  | **80%**      | **79%**      |
-| ANN                  | **88%**      | **86%**      |
-| Decision Tree        | **76%**      | **73%**      |
+| Logistic Regression   | **76.24%**   | **66.42%**   |
+| Random Forest        | **77.88%**   | **68.42%**   |
+| XGB                  | **77.50%**   | **68.80%**   |
+| ANN                  | **72.70%**   | **62.29%**   |
+| Decision Tree        | **72.70%**   | **62.29%**   |
 
-✅ **ANN performed the best**, achieving **88% accuracy**.  
+✅ **Random Forest performed the best**, achieving **77.88% accuracy**.  
 ✅ A **confusion matrix** was used to analyze model errors.  
 
 ---
@@ -76,4 +76,4 @@ We deployed the model using **Streamlit**, allowing users to:
 
 🔗 **Try the Web App:** [👉 Click Here](https://questionquora.streamlit.app/)  
 
-![Application Screenshot](image.png) 
+![Application Screenshot](image.png)  
