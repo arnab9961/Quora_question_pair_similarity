@@ -13,29 +13,29 @@ the train.csv file contains 404,290 rows and 6 columns, training the model on th
 
 ## **📊 2. Exploratory Data Analysis (EDA)**  
 Before training the model, we analyzed the data:  
-✅ **Checked how many duplicate questions exist.
-✅ **Visualized word distributions using graphs.
+✅ **Checked how many duplicate questions exist.**
+✅ **Visualized word distributions using graphs.**
 
 
 ---
 
 ## **🔍 3.  Text preprocessing pipeline**  
-✅ **Removing html tags
-✅ **Removing Punctuations
-✅ **Performing Lemmatization
-✅ **Performing lowercase
-✅ **Removing Stopwords
-✅ **Decontracting words
-✅ **replacing special characters with their string symbols
+✅ **Removing html tags**
+✅ **Removing Punctuations**
+✅ **Performing Lemmatization**
+✅ **Performing lowercase**
+✅ **Removing Stopwords**
+✅ **Decontracting words**
+✅ **replacing special characters with their string symbols**
 
 
 ---
 
 ## **⚙️ 4. Feature Engineering**  
-✅ **Adding some features q1_len, q2_len, q1_num_words, q2_num_words, word_commmon, word_share.
-✅ **added token, lenth based, fuzzy features. like: cwc_min, cwc_min, cwc_max, csc_min, csc_max, ctc_min, ctc_max, last_word_eq, first_word_eq, abs_len_diff, abs_len_diff, mean_len, fuzz_ratio, fuzz_partial_ratio, token_sort_ratio, token_set_ratio, longest_substr_ratio.
-✅ **TF-IDF (Term Frequency-Inverse Document Frequency) vectorization¶
-to convert the text questions into numerical features.
+✅ **Adding some features q1_len, q2_len, q1_num_words, q2_num_words, word_commmon, word_share.**
+✅ **added token, lenth based, fuzzy features. like: cwc_min, cwc_min, cwc_max, csc_min, csc_max, ctc_min, ctc_max, last_word_eq, first_word_eq, abs_len_diff, abs_len_diff, mean_len, fuzz_ratio, fuzz_partial_ratio, token_sort_ratio, token_set_ratio, longest_substr_ratio.**
+✅ **TF-IDF (Term Frequency-Inverse Document Frequency) vectorization¶**
+to convert the text questions into numerical features.**
 ✅ **We added extra features to help the model understand **question similarities**:  
 
 
