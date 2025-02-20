@@ -1,43 +1,48 @@
 # 📌 Question Pair Similarity Classification
 
 ## **Introduction**  
-This project aims to build a **machine learning system** that can identify whether two questions have the **same meaning** or not. Using **text processing, data analysis, and machine learning models**, we compare question pairs to detect duplicates.
+The goal of this project is to develop an advanced question pair similarity classification system that leverages text preprocessing, exploratory data analysis, and machine learning techniques to accurately identify whether two questions are semantically similar (duplicates) or not.
 
 ---
 
 ## **📂 1. Reading the Dataset**  
-The dataset contains **404,290 question pairs**, but training on the full dataset requires too much time.  
+the train.csv file contains 404,290 rows and 6 columns, training the model on the entire dataset would require significant computational time. To optimize the process, I sampled 50,000 rows from the dataset and set a random state of 2. This randomly selects a subset of 50,000 rows from the dataset for faster processing.
 ✅ To optimize performance, we **randomly selected 50,000 rows** for training.  
 
 ---
 
 ## **📊 2. Exploratory Data Analysis (EDA)**  
 Before training the model, we analyzed the data:  
-✅ Checked the **number of duplicate questions**.  
-✅ Used **graphs and charts** to visualize word distributions.  
+✅ Checked how many duplicate questions exist.
+✅ Visualized word distributions using graphs.
+
 
 ---
 
-## **🔍 3. Text Preprocessing**  
-Since raw text contains **noise**, we cleaned the questions using:  
-✅ **Removing HTML tags & punctuation**  
-✅ **Converting text to lowercase**  
-✅ **Removing stopwords** (e.g., "is", "the", "a")  
-✅ **Lemmatization** (e.g., "running" → "run")  
-✅ **Replacing special characters** (e.g., "$" → "dollar")  
+## **🔍 3.  Text preprocessing pipeline**  
+✅ Removing html tags
+✅ Removing Punctuations
+✅ Performing Lemmatization
+✅ Performing lowercase
+✅ Removing Stopwords
+✅ Decontracting words
+✅ replacing special characters with their string symbols
+
 
 ---
 
 ## **⚙️ 4. Feature Engineering**  
-We added extra features to help the model understand **question similarities**:  
-✅ **Basic Features:** Question length, word count, and shared words.  
-✅ **Token-based Features:** Checked if questions start or end with the same word.  
-✅ **Fuzzy Matching Features:** Compared phrase similarity.  
-✅ **TF-IDF Vectorization:** Converted text into numerical features for model training.  
+✅ Adding some features q1_len, q2_len, q1_num_words, q2_num_words, word_commmon, word_share.
+✅ added token, lenth based, fuzzy features. like: cwc_min, cwc_min, cwc_max, csc_min, csc_max, ctc_min, ctc_max, last_word_eq, first_word_eq, abs_len_diff, abs_len_diff, mean_len, fuzz_ratio, fuzz_partial_ratio, token_sort_ratio, token_set_ratio, longest_substr_ratio.
+✅ TF-IDF (Term Frequency-Inverse Document Frequency) vectorization¶
+to convert the text questions into numerical features.
+✅ We added extra features to help the model understand **question similarities**:  
+
 
 ---
 
 ## **🤖 5. Model Building & Training**  
+
 The dataset was split into:  
 ✅ **80% Training Data**  
 ✅ **20% Test Data**  
