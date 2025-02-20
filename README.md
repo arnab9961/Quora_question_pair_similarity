@@ -32,3 +32,5 @@ The goal of this project is to check if two questions mean the same thing. This 
 - Built a **Streamlit web app** so users can input questions and check if they are similar.
 - The app is available at: [https://questionquora.streamlit.app/](https://questionquora.streamlit.app/)
 
+![Application Screenshot](image.png)
+
